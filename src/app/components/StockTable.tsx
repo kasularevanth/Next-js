@@ -1,11 +1,11 @@
-'use client'
+"use client";
 // StockTable.js
-import React, { useEffect } from 'react';
-import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../store/index';
-import { setStockData } from '../store/stockSlice';
-import './StockTable.css'; // Import CSS file
+import React, { useEffect } from "react";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store/index";
+import { setStockData } from "../store/stockSlice";
+import "./StockTable.css"; // Import CSS file
 
 const StockTable: React.FC = () => {
   const dispatch = useDispatch();
@@ -14,10 +14,12 @@ const StockTable: React.FC = () => {
   useEffect(() => {
     const fetchStockData = async () => {
       try {
-        const response = await axios.get(`/api/stocks?symbol=${symbol}`);
+        const response = await axios.get(
+          `/pages/api/fetchData?symbol=${symbol}`
+        );
         dispatch(setStockData(response.data));
       } catch (error) {
-        console.error('Error fetching stock data:', error);
+        console.error("Error fetching stock data:", error);
       }
     };
 
@@ -40,8 +42,9 @@ const StockTable: React.FC = () => {
         <tbody>
           {data.map((entry, index) => (
             <tr key={index}>
-              <td>{entry.price}</td>
-              <td>{entry.timestamp.toLocaleString()}</td> {/* Assuming timestamp is now a Date */}
+              <td>{entry.p}</td>
+              <td>{entry.t?.toUTCString() ?? ""}</td>{" "}
+              {/* Assuming timestamp is now a Date */}
             </tr>
           ))}
         </tbody>
