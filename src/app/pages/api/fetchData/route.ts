@@ -14,7 +14,7 @@ interface Trade {
 }
 
 async function fetchStockData(symbol: string) {
-  console.log("VALKYE", symbol);
+  console.log("VALUE", symbol);
   const API_URL = `${BASE_API_URL}?pair=${symbol.toUpperCase()}&limit=20`;
 
   try {
