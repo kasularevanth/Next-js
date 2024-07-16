@@ -1,20 +1,20 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface StockState {
   symbol: string;
-  data: { price: number; timestamp: Date }[];
+  data: { p: number; t: Date }[];
 }
 
 const initialState: StockState = {
-  symbol: 'bitcoin',
+  symbol: "B-BTC_USDT",
   data: [],
 };
 
 const stockSlice = createSlice({
-  name: 'stock',
+  name: "stock",
   initialState,
   reducers: {
-    setStockData(state, action: PayloadAction<{ price: number; timestamp: Date }[]>) {
+    setStockData(state, action: PayloadAction<{ p: number; t: Date }[]>) {
       state.data = action.payload;
     },
     setSymbol(state, action: PayloadAction<string>) {
