@@ -1,0 +1,60 @@
+/* StockTable.css */
+
+.stock-table-container {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.stock-table-container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+
+
+.stock-table th,
+.stock-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.stock-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.stock-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+
+
+
+
+.stock-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.stock-table th,
+.stock-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+.stock-table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Zebra stripes */
+}
+
+.stock-table tr:hover {
+  background-color: #ddd; /* Hover effect */
+}
