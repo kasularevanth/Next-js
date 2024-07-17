@@ -34,11 +34,11 @@ export async function GET(req: NextRequest, res: NextResponse) {
   try {
     await connectToDatabase();
     const { searchParams } = new URL(req.url);
-    console.log("YO CHJECK", searchParams);
+    // console.log("YO CHJECK", searchParams);
     const value = searchParams.get("symbol") ?? "";
-    console.log("VACHINDHIIII ROOI", value);
+    // console.log("VACHINDHIIII ROOI", value);
     // return NextResponse.json({ message: "Nen batike unna" });
-    console.log("KINDA DATA", await fetchStockData(value));
+    // console.log("KINDA DATA", await fetchStockData(value));
     return NextResponse.json(await fetchStockData(value));
   } catch (error) {
     console.error("Error in API handler:", error);

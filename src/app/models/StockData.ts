@@ -1,15 +1,20 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document } from "mongoose";
 
 interface IStockData extends Document {
-  symbol: string;
-  price: number;
-  timestamp: Date;
+  p: number; // Price
+  q: number; // Quantity
+  s: string; // Symbol
+  T: number; // Timestamp
+  m: boolean; // Buyer Maker
 }
 
 const StockDataSchema: Schema = new Schema({
-  symbol: { type: String, required: true },
-  price: { type: Number, required: true },
-  timestamp: { type: Date, default: Date.now },
+  s: { type: String, required: true },
+  p: { type: Number, required: true },
+  q: { type: Number, required: true },
+  m: { type: Boolean, required: true },
+  T: { type: Date, default: Date.now },
 });
 
-export default mongoose.models.StockData || mongoose.model<IStockData>('StockData', StockDataSchema);
+export default mongoose.models.StockData ||
+  mongoose.model<IStockData>("StockData", StockDataSchema);
